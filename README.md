@@ -1,7 +1,7 @@
 # ITCS 3166 Final Project
 
 ## Project Requirements
-[https://webpages.uncc.edu/aatzache/ITCS3166/Project/ITCS3166ProjectAssignment.txt Full Requirements]
+[Full Requirements](https://webpages.uncc.edu/aatzache/ITCS3166/Project/ITCS3166ProjectAssignment.txt)
 
 3. Implement IP router function, which does the following:
 - takes as an input: 
