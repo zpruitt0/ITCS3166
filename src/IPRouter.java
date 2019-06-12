@@ -31,6 +31,7 @@ public class IPRouter {
 		}
 	}
 
+	
 	public void setMask(String inAdd)
 	{
 		mask = Integer.parseInt(address.substring(address.length()-2));
