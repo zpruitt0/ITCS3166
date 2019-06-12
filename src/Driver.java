@@ -14,9 +14,11 @@ public class Driver {
 	rTable.put("135.46.60.0/22", "Interface 1");
 	rTable.put("192.53.40.0/23", "Router 1");
 	rTable.put("Default", "Router 2");
+	
+	//for testing purposes
+	String test = "192.46.120.6/22";
 
-	
-	
+	IPRouter router = new IPRouter(test, rTable);
 	
 	}
 
