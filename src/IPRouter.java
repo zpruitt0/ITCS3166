@@ -9,20 +9,22 @@ public class IPRouter {
 	
 	public IPRouter(String inAdd, Map<String,String> inRTable)
 	{
-		address = inAdd;
+		address = inAdd.substring(0, inAdd.length()-(inAdd.length()-inAdd.indexOf("/")));
+		mask = Integer.parseInt(inAdd.substring(inAdd.length()-(inAdd.length()-inAdd.indexOf("/")-1)));
 		rTable = inRTable;
-		mask = Integer.parseInt(inAdd.substring(inAdd.length()-2));
 		octets = new int [4];		
 	}
 	
+	//Utilizes setMask and setOctets because those things should only change when a new address
+	//is entered in the byte.byte.byte.byte/mask String format
 	public void setAddress(String inAdd)
 	{
+		address = inAdd.substring(0, inAdd.length()-(inAdd.length()-inAdd.indexOf("/")));
 		setMask(inAdd);
-		address = inAdd.substring(0, inAdd.length()-3);
 		setOctets(address);
 	}
 	
-	public void setOctets(String inAdd)
+	private void setOctets(String inAdd)
 	{
 		String [] strOctets= inAdd.split("[.]");	
 		for(int i = 0; i < strOctets.length; i++) 
@@ -32,20 +34,18 @@ public class IPRouter {
 	}
 
 	
-	public void setMask(String inAdd)
+	private void setMask(String inAdd)
 	{
-		mask = Integer.parseInt(address.substring(address.length()-2));
+		mask = Integer.parseInt(inAdd.substring(inAdd.length()-(inAdd.length()-inAdd.indexOf("/")-1)));
 	}
 	
-	//needs to be done
-	//public int [] conversion()
-	//{
-	/*
-	 * Hint: the IP addresses first need to be converted to binary in order to extract and compare the network part . see sample IP address conversion here:
-	 * https://webpages.uncc.edu/aatzache/ITCS3166/ExerciseD.doc
-	 */
-		
-	//return 0;
-	//}
+	@Override
+	public String toString()
+	{
+		String result = "Address: " + address + "\nMask: " + mask;
+		return result;
+	}
+	
+
 	
 }
