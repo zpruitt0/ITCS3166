@@ -6,9 +6,7 @@ public class Driver {
         
                 
         
-	public static void main(String[] args) {
-
-		
+	public static void main(String[] args) {	
 	/*
 	 * Routing table creation from Chapter 5, Exercise 33:
 	 * Address/Mask, Next Hop
@@ -24,12 +22,13 @@ public class Driver {
 	String test = "192.46.120.6";
 	IPRouter router = new IPRouter(test, rTable);
 	//System.out.println(router.toString());
-	router.setAddress("192.46.120.6/22");
+	router.setAddress("192.46.120.77");
 	//System.out.println(router.toString());
-	//router.setAddress("0.255.10.90/26");
 	//System.out.println(router.toString());
-        router.convertOctetsToBinary(router.getOctets());
-	
+    router.convertOctetsToBinary(router.getOctets());
+    router.getRoutingData();
+
+    
 	}
 
 }
