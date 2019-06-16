@@ -17,12 +17,12 @@ public class Driver {
 	rTable.put("Default", "Router 2");
 	
 	//for testing purposes
-	String test = "192.46.120.6/22";
+	String test = "192.46.120.6";
 	IPRouter router = new IPRouter(test, rTable);
 	System.out.println(router.toString());
-	router.setAddress("250.250.250.90/8");
+	router.setAddress("250.250.250.90");
 	System.out.println(router.toString());
-	router.setAddress("0.255.10.90/26");
+	router.setAddress("0.255.10.90");
 	System.out.println(router.toString());
 	
 	}
